@@ -30,6 +30,20 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const fullscreenBtn = document.getElementById('fullscreenBtn');
 
 // Add double-click event listener to document
+// Add touch events for mobile
+let lastTap = 0;
+document.addEventListener('touchend', function(event) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    if (tapLength < 500 && tapLength > 0) {
+        toggleFullScreen();
+        event.preventDefault();
+    }
+    lastTap = currentTime;
+});
+
+// Keep existing double-click for desktop
 document.addEventListener('dblclick', toggleFullScreen);
 
 function toggleFullScreen() {
