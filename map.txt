@@ -1,0 +1,8 @@
+/Users/piri/chooselife/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+└── images/
+    └── tus.png
